@@ -14,8 +14,8 @@
         <!--System/Platform attributes-->
         <item name="colorControlHighlight">@color/ui_color_grey_400</item>
 
-        <!--Styles- ->
         <item name="actionBarTheme">@style/ActionBarTheme</item>
+        <!--Styles-->
         <item name="materialButtonStyle">@style/ButtonStyle</item>
         <item name="materialButtonOutlinedStyle">@style/OutlinedButtonStyle</item>
         <item name="borderlessButtonStyle">@style/BorderlessButtonStyle</item>
@@ -27,8 +27,8 @@
         <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButtonStyle</item>
         <item name="actionMenuTextColor">?attr/colorPrimary</item>
         <item name="android:actionMenuTextAppearance">@style/ActionMenuTextAppearance</item>
-        <item name="collapsedTitleTextAppearance">@style/CollapsedTitleTextAppearance</item>
-        <item name="expandedTitleTextAppearance">@style/ExpandedTitleTextAppearance</item>
+        <!--<item name="collapsedTitleTextAppearance">@style/CollapsedTitleTextAppearance</item>
+        <item name="expandedTitleTextAppearance">@style/ExpandedTitleTextAppearance</item>-->
         <item name="android:progressBarStyle">@style/ProgressBarStyle</item>
         <item name="android:progressBarStyleLarge">@style/ProgressBarStyleLarge</item>
         <item name="android:progressBarStyleSmall">@style/ProgressBarStyleSmall</item>
@@ -38,9 +38,9 @@
         <item name="snackbarStyle">@style/SnackbarStyle</item>
         <item name="floatingActionButtonStyle">@style/FloatingActionButton</item>
         <item name="bottomNavigationStyle">@style/BottomNavigationView</item>
-        <item name="bottomSheetDialogTheme">@style/BottomSheetDialogTheme</item>
+        <!--<item name="bottomSheetDialogTheme">@style/BottomSheetDialogTheme</item>-->
 
-        <!- -Material shape attributes- ->
+        <!--Material shape attributes- ->
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.NX.SmallComponent</item>
         <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.NX.MediumComponent</item>
         <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.NX.LargeComponent</item>

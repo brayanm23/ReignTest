@@ -1,3 +1,221 @@
 <resources>
 
+    <style name="ActionBarTheme" parent="@style/ThemeOverlay.MaterialComponents.ActionBar">
+        <item name="android:background">?android:attr/colorBackground</item>
+        <item name="android:textColor">?attr/colorOnBackground</item>
+    </style>
+
+    <style name="ButtonStyle" parent="@style/Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="OutlinedButtonStyle" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">?attr/colorPrimary</item>
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="BorderlessButtonStyle" parent="@style/Widget.MaterialComponents.Button.TextButton">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <style name="TabLayoutStyle" parent="Widget.MaterialComponents.TabLayout">
+        <item name="tabRippleColor">@android:color/transparent</item>
+        <item name="tabBackground">?android:attr/colorBackground</item>
+    </style>
+
+    <style name="CardViewStyle" parent="@style/Widget.MaterialComponents.CardView">
+        <!--<item name="cardCornerRadius">@dimen/component_radius</item>-->
+        <item name="strokeColor">#EFEFEF</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="MaterialAlertDialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="backgroundColor">?attr/colorPrimary</item>
+        <item name="colorAccent">?attr/colorPrimary</item>
+        <!--<item name="android:bottomLeftRadius">@dimen/component_radius</item>
+        <item name="android:topLeftRadius">@dimen/component_radius</item>
+        <item name="android:bottomRightRadius">@dimen/component_radius</item>
+        <item name="android:topRightRadius">@dimen/component_radius</item>-->
+    </style>
+
+    <style name="AppBarLayoutStyle" parent="Widget.MaterialComponents.AppBarLayout.Primary">
+        <item name="android:background">?android:attr/colorBackground</item>
+    </style>
+
+    <style name="ToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">?android:attr/colorBackground</item>
+        <!--<item name="titleTextAppearance">@style/TextAppearance.NX.TitleNav</item>-->
+        <item name="subtitleTextAppearance">?attr/textAppearanceSubtitle2</item>
+    </style>
+
+    <style name="ToolbarNavigationButtonStyle" parent="@style/Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:tint">?attr/colorPrimary</item>
+        <item name="android:background">?android:attr/colorBackground</item>
+    </style>
+
+    <style name="ActionMenuTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Menu">
+        <item name="actionMenuTextColor">?attr/colorPrimary</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:layout_centerVertical">true</item>
+        <!--<item name="fontFamily">@font/gibson_medium</item>-->
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">18sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <!--<style name="CollapsedTitleTextAppearance" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="fontFamily">@font/gibson_semi_bold</item>
+    </style>
+
+    <style name="ExpandedTitleTextAppearance" parent="@style/TextAppearance.Design.CollapsingToolbar.Expanded">
+        <item name="fontFamily">@font/gibson_semi_bold</item>
+    </style>-->
+
+    <style name="RadioButtonStyle" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <item name="android:textColor">?attr/colorOnBackground</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.NX</item>
+        <!--<item name="buttonTint">@color/radio_button_tint</item>-->
+    </style>
+
+    <style name="CheckBoxStyle" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <item name="android:textColor">?attr/colorOnBackground</item>
+        <!--<item name="android:button">@drawable/checkbox_selector</item>-->
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="enforceMaterialTheme">false</item>
+        <item name="useMaterialThemeColors">false</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.NX</item>
+    </style>
+
+    <style name="SwitchStyle" parent="Widget.MaterialComponents.CompoundButton.Switch">
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <item name="android:textColor">?attr/colorOnBackground</item>
+        <item name="switchPadding">6dp</item>
+        <item name="enforceMaterialTheme">false</item>
+        <item name="useMaterialThemeColors">false</item>
+        <!--item name="track">@drawable/switch_track_selector</item>
+        <item name="android:thumb">@drawable/switch_thumb_selector</item>-->
+        <item name="materialThemeOverlay">@style/ThemeOverlay.NX</item>
+    </style>
+
+    <style name="ThemeOverlay.NX" parent="">
+        <item name="colorOnSurface">@color/ui_color_grey_800</item>
+        <item name="colorSecondary">@color/ui_color_grey_400</item>
+    </style>
+
+    <style name="CircleProgressBarStyle" parent="@style/Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint">?attr/colorPrimary</item>
+        <item name="android:indeterminateTintMode">src_in</item>
+    </style>
+
+    <style name="ProgressBarStyle" parent="@style/CircleProgressBarStyle" />
+
+    <style name="ProgressBarStyleSmall" parent="@style/ProgressBarStyle" />
+
+    <style name="ProgressBarStyleLarge" parent="@style/ProgressBarStyle" />
+
+    <style name="SnackbarStyle" parent="@style/Widget.MaterialComponents.Snackbar">
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:backgroundTint">@color/ui_color_grey_800</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody2</item>
+    </style>
+
+    <style name="BottomNavigationView" parent="@style/Widget.MaterialComponents.BottomNavigationView">
+        <!--<item name="itemTextAppearanceActive">@style/TextAppearance.NX.BottomNav</item>
+        <item name="itemIconTint">@drawable/bottom_navigation_view_text</item>-->
+        <item name="itemIconSize">24dp</item>
+        <item name="elevation">0dp</item>
+        <item name="android:background">?attr/colorSurface</item>
+        <item name="itemRippleColor">@android:color/transparent</item>
+    </style>
+
+    <style name="FloatingActionButton" parent="@style/Widget.MaterialComponents.FloatingActionButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.NX.FloatingActionButton</item>
+        <item name="elevation">0dp</item>
+        <item name="pressedTranslationZ">0dp</item>
+    </style>
+
+    <style name="ThemeOverlay.NX.FloatingActionButton" parent="">
+        <item name="colorSecondary">?attr/colorPrimary</item>
+        <item name="colorOnSecondary">?attr/colorOnPrimary</item>
+        <item name="colorOnSurface">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="NxKeyboardStyle">
+        <item name="android:textAppearance">?attr/textAppearanceHeadline2</item>
+        <!--<item name="fontFamily">@font/gibson_medium</item>-->
+        <item name="android:gravity">center</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <!--<style name="BottomSheetDialogTheme" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_shape</item>
+    </style>-->
+
+    <style name="NxSearchInputStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">?attr/colorSurface</item>
+        <item name="hintEnabled">false</item>
+        <item name="endIconMode">clear_text</item>
+        <item name="endIconTint">@null</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+        <!--<item name="shapeAppearance">@style/ShapeAppearance.NX.SmallComponent</item>
+        <item name="endIconDrawable">@drawable/ic_clear_text</item>
+        <item name="startIconDrawable">@drawable/ic_lens</item>-->
+    </style>
+
+    <style name="NxTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="hintTextAppearance">@style/InputHintText</item>
+        <item name="colorPrimary">?attr/colorPrimary</item>
+        <item name="colorOnSurface">@color/ui_color_grey_700</item>
+        <item name="errorIconDrawable">@null</item>
+    </style>
+
+    <style name="NxPinInputStyle" parent="Widget.AppCompat.EditText">
+        <item name="colorPrimary">?attr/colorPrimary</item>
+        <item name="colorOnSurface">?attr/colorPrimary</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="backgroundTint">?attr/colorPrimary</item>
+    </style>
+
+    <style name="InputHintText" parent="TextAppearance.Design.Hint">
+        <item name="hintTextColor">@color/ui_color_grey_700</item>
+        <!--<item name="fontFamily">@font/gibson_regular</item>-->
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">16sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textColor">@color/ui_color_grey_700</item>
+    </style>
+
+    <style name="NxInput" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="colorAccent">@color/ui_color_grey_700</item>
+        <item name="colorControlNormal">@color/ui_color_grey_700</item>
+        <item name="colorControlActivated">@color/ui_color_grey_700</item>
+        <item name="colorPrimary">@color/ui_color_grey_700</item>
+        <item name="errorIconDrawable">@null</item>
+        <!--<item name="errorTextAppearance">@style/TextAppearance.NX.Caption2</item>-->
+        <item name="errorTextColor">?attr/colorError</item>
+        <item name="hintTextAppearance">@style/NxInputHint</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+    </style>
+
+    <style name="NxInputHint" parent="TextAppearance.Design.Hint">
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <item name="android:textColor">@color/ui_color_grey_700</item>
+    </style>
+
 </resources>
