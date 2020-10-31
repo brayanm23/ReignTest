@@ -45,6 +45,8 @@ class PostAdapter(private val posts: List<Post>): RecyclerView.Adapter<PostAdapt
         fun bind(post: Post) {
             containerView.post_title.text = post.story_title
             containerView.author_and_date.text = "${post.author} - ${post.created_at}"
+            //containerView.titleText.text = post.story_title
+            //containerView.descriptionText.text = "${post.author} - ${post.created_at}"
         }
     }
 }

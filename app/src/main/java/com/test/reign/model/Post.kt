@@ -5,5 +5,6 @@ data class Post (
     val created_at: String,
     val author: String,
     val story_title: String,
-    val story_url: String
+    val story_url: String,
+    var isExpanded: Boolean = false
 )
