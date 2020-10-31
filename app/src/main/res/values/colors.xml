@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="ui_color_white">#FFFFFF</color>
+    <color name="ui_color_grey_200">#FAFAFA</color>
+    <color name="ui_color_grey_300">#E8E8E8</color>
+    <color name="ui_color_grey_400">#D1D1D1</color>
+    <color name="ui_color_grey_500">#B2B2B2</color>
+    <color name="ui_color_grey_600">#767676</color>
+    <color name="ui_color_grey_700">#5B5B5B</color>
+    <color name="ui_color_grey_800">#333333</color>
+    <color name="ui_color_grey_800_70">#B3333333</color>
+    <color name="ui_color_black">#000000</color>
+
+    <color name="ui_color_violet_200">#F3EEF6</color>
+    <color name="ui_color_violet_500">#50007F</color>
+
+    <color name="ui_color_brand_500">#320A46</color>
+    <color name="ui_color_brand_800">#140328</color>
+
+    <color name="ui_color_yellow_200">#FCF0CE</color>
+    <color name="ui_color_yellow_500">#FFB30F</color>
+
+    <color name="ui_color_orange_500">#FE5000</color>
+    <color name="ui_color_orange_600">#CB4000</color>
+
+    <color name="ui_color_red_200">#FBE9E9</color>
+    <color name="ui_color_red_600">#BA1A1A</color>
+    <color name="ui_color_red_700">#991515</color>
+
+    <color name="ui_color_green_200">#E4F3E7</color>
+    <color name="ui_color_green_500">#24A33F</color>
+    <color name="ui_color_green_600">#19722C</color>
+
+    <color name="ui_color_teal_500">#0BA1B1</color>
+
+    <color name="ui_color_blue_200">#E6EEFA</color>
+    <color name="ui_color_blue_500">#1160D0</color>
 </resources>

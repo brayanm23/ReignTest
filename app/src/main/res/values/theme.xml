@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base" parent="Theme.MaterialComponents.Light.NoActionBar" >
+        <!--Color-->
+        <item name="colorPrimary">@color/ui_color_violet_500</item>
+        <item name="colorOnPrimary">@color/ui_color_white</item>
+        <item name="colorError">@color/ui_color_red_600</item>
+        <item name="colorOnError">@color/ui_color_white</item>
+        <item name="colorSurface">@color/ui_color_white</item>
+        <item name="colorOnSurface">@color/ui_color_grey_800</item>
+        <item name="colorOnBackground">@color/ui_color_grey_800</item>
+
+        <!--System/Platform attributes-->
+        <item name="colorControlHighlight">@color/ui_color_grey_400</item>
+
+        <!--Styles- ->
+        <item name="actionBarTheme">@style/ActionBarTheme</item>
+        <item name="materialButtonStyle">@style/ButtonStyle</item>
+        <item name="materialButtonOutlinedStyle">@style/OutlinedButtonStyle</item>
+        <item name="borderlessButtonStyle">@style/BorderlessButtonStyle</item>
+        <item name="tabStyle">@style/TabLayoutStyle</item>
+        <item name="materialCardViewStyle">@style/CardViewStyle</item>
+        <item name="materialAlertDialogTheme">@style/MaterialAlertDialogTheme</item>
+        <item name="appBarLayoutStyle">@style/AppBarLayoutStyle</item>
+        <item name="toolbarStyle">@style/ToolbarStyle</item>
+        <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButtonStyle</item>
+        <item name="actionMenuTextColor">?attr/colorPrimary</item>
+        <item name="android:actionMenuTextAppearance">@style/ActionMenuTextAppearance</item>
+        <item name="collapsedTitleTextAppearance">@style/CollapsedTitleTextAppearance</item>
+        <item name="expandedTitleTextAppearance">@style/ExpandedTitleTextAppearance</item>
+        <item name="android:progressBarStyle">@style/ProgressBarStyle</item>
+        <item name="android:progressBarStyleLarge">@style/ProgressBarStyleLarge</item>
+        <item name="android:progressBarStyleSmall">@style/ProgressBarStyleSmall</item>
+        <item name="radioButtonStyle">@style/RadioButtonStyle</item>
+        <item name="checkboxStyle">@style/CheckBoxStyle</item>
+        <item name="switchStyle">@style/SwitchStyle</item>
+        <item name="snackbarStyle">@style/SnackbarStyle</item>
+        <item name="floatingActionButtonStyle">@style/FloatingActionButton</item>
+        <item name="bottomNavigationStyle">@style/BottomNavigationView</item>
+        <item name="bottomSheetDialogTheme">@style/BottomSheetDialogTheme</item>
+
+        <!- -Material shape attributes- ->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.NX.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.NX.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.NX.LargeComponent</item>
+
+        <!- -Typography- ->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.NX.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.NX.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.NX.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.NX.Headline4</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.NX.Subtitle1</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.NX.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.NX.Body2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.NX.Button</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.NX.Caption</item>
+        -->
+    </style>
+
+    <style name="Theme" parent="Base">
+        <item name="android:colorBackground">@color/ui_color_grey_200</item>
+    </style>
+
+    <style name="Theme.White" parent="Base">
+        <item name="android:colorBackground">@color/ui_color_white</item>
+    </style>
+
+</resources>
