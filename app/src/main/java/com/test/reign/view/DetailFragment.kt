@@ -21,7 +21,7 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setToolbar()
+        initToolbar()
         detail_web_view.loadUrl(arguments?.getString(URL_KEY))
         toolbar_title.text = arguments?.getString(TITLE_KEY)
         toolbar.setNavigationOnClickListener {
@@ -29,7 +29,7 @@ class DetailFragment : Fragment() {
         }
     }
 
-    private fun setToolbar() {
+    private fun initToolbar() {
         if (activity is AppCompatActivity) {
             (activity as AppCompatActivity).let {
                 it.apply {

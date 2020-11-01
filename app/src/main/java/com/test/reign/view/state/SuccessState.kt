@@ -3,6 +3,7 @@ package com.test.reign.view.state
 import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager.VERTICAL
+import com.test.reign.extension.fadeOut
 import com.test.reign.model.PostResponse
 import com.test.reign.view.PostsFragment
 import com.test.reign.view.adapter.PostAdapter
@@ -14,6 +15,8 @@ class SuccessState(private val viewModel: PostsViewModel, private val response: 
 
     override fun setState(view: View, postsFragment: PostsFragment) {
         with(view) {
+            view_loading.fadeOut()
+            view_error.fadeOut()
             swipe_refresh_layout.isRefreshing = false
             setOnRefreshListener(view.rootView)
             posts_recyclerview.apply {

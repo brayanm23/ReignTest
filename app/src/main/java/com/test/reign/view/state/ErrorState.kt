@@ -1,45 +1,32 @@
 package com.test.reign.view.state
 
 import android.view.View
+import android.view.LayoutInflater.from
+import com.test.reign.R.layout.content_error
+import com.test.reign.extension.fadeIn
+import com.test.reign.extension.fadeOut
 import com.test.reign.view.PostsFragment
 import com.test.reign.viewmodel.PostsViewModel
+import kotlinx.android.synthetic.main.content_error.view.*
+import kotlinx.android.synthetic.main.fragment_post.view.*
 
 class ErrorState(private val viewModel: PostsViewModel) : PostsViewState {
 
     override fun setState(view: View, postsFragment: PostsFragment) {
-        TODO("Not yet implemented")
-    }
-}
-    /*companion object {
-        private const val EVENT_HOME_ERROR = "Home - Error"
-        private const val ERROR = "error"
-        const val NETWORK = "internet"
-        const val PROBLEM = "problema"
-    }
+        with(view) {
+            view_loading.fadeOut()
+            //home_content_layout.fadeOut()
+            view_error.removeAllViews()
 
-    override fun setState(binding: FragmentHomeBinding, homeFragment: HomeFragment) {
-        execute(TrackAction(TrackData(path = EVENT_HOME_ERROR, params = mapOf(ERROR to errorType))))
-
-        with(binding.root) {
-            progress_bar.fadeOut()
-            home_content_layout.fadeOut()
-            content_error.removeChildrenIfAny()
-
-            // TODO FeedbackFragment
-            content_error.addView(
-                ContentGenericErrorBinding.inflate(from(context)).apply {
-                    retryButton.setOnClickListener {
-                        homeFragment.sharedPreferences.apply {
-                            viewModel.getHome(
-                                getString(HomeFragment.MONEY_BUTTON_ANIMATED_DATE_KEY, null),
-                                getInt(HomeFragment.MONEY_BUTTON_ANIMATED_COUNT_KEY, 0)
-                            )
-                        }
+            view_error.addView(
+                from(context).inflate(content_error, null).apply {
+                    retry_button.setOnClickListener {
+                        viewModel.getPosts()
                     }
-                }.root
+                }
             )
 
-            content_error.fadeIn()
-            swipe_refresh_layout.isRefreshing = false
+            view_error.fadeIn()
         }
-    }*/
+    }
+}
