@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.mindorks.example.coroutines.utils.ViewModelFactory
 import com.test.reign.R
+import com.test.reign.database.DatabaseBuilder
+import com.test.reign.repository.PostRepository
 import com.test.reign.viewmodel.PostsViewModel
-
 
 class PostsFragment : Fragment() {
 
@@ -28,7 +30,13 @@ class PostsFragment : Fragment() {
     }
 
     private fun setViewModel() {
-        viewModel = ViewModelProvider(requireActivity()).get(PostsViewModel::class.java)
+        viewModel = ViewModelProvider(
+            this,
+            ViewModelFactory(
+                PostRepository(),
+                DatabaseBuilder.getInstance(requireContext())
+            )
+        ).get(PostsViewModel::class.java)
     }
 
     private fun setPostsObserver() {

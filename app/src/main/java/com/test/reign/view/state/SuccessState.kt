@@ -4,14 +4,14 @@ import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager.VERTICAL
 import com.test.reign.extension.fadeOut
-import com.test.reign.model.PostResponse
+import com.test.reign.model.Post
 import com.test.reign.view.PostsFragment
 import com.test.reign.view.adapter.PostAdapter
 import com.test.reign.viewmodel.PostsViewModel
 import io.sulek.ssml.SSMLLinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_post.view.*
 
-class SuccessState(private val viewModel: PostsViewModel, private val response: PostResponse) : PostsViewState {
+class SuccessState(private val viewModel: PostsViewModel, private val response: List<Post>) : PostsViewState {
 
     override fun setState(view: View, postsFragment: PostsFragment) {
         with(view) {
@@ -22,7 +22,7 @@ class SuccessState(private val viewModel: PostsViewModel, private val response: 
             posts_recyclerview.apply {
                 layoutManager = SSMLLinearLayoutManager(context)
                 adapter = PostAdapter()
-                (adapter as PostAdapter).setPosts(response.hits)
+                (adapter as PostAdapter).setPosts(response)
                 addItemDecoration(DividerItemDecoration(context, VERTICAL))
             }
         }

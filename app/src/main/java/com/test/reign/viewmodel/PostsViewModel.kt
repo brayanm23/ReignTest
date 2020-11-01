@@ -1,10 +1,13 @@
 package com.test.reign.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.test.reign.core.Status.CONNECTION_ERROR
 import com.test.reign.core.Status.SUCCESS
+import com.test.reign.database.AppDatabase
 import com.test.reign.view.state.SuccessState
 import com.test.reign.repository.PostRepository
 import com.test.reign.model.PostResponse
@@ -16,7 +19,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 
-class PostsViewModel : ViewModel() {
+class PostsViewModel(private val postRepository: PostRepository, private val db: AppDatabase) : ViewModel() {
 
     private lateinit var model: PostResponse
 
@@ -24,24 +27,33 @@ class PostsViewModel : ViewModel() {
     val post: LiveData<PostsViewState>
         get() = _posts
 
-    var postRepository = PostRepository()
-
     fun getPosts() {
         _posts.postValue(LoadingState())
         viewModelScope.launch(Dispatchers.Main + coroutineExceptionHandler) {
             val response = postRepository.getPosts()
-
-            if (response.status == SUCCESS) {
-                model = response.data!!
-                _posts.postValue(SuccessState(this@PostsViewModel, model))
-            } else {
-                _posts.postValue(ErrorState(this@PostsViewModel))
+            when {
+                response.status == SUCCESS -> {
+                    model = response.data!!
+                    _posts.postValue(SuccessState(this@PostsViewModel, model.hits))
+                    db.postDao().insertAll(model.hits)
+                }
+                response.status == CONNECTION_ERROR && db.postDao().getAll().isNotEmpty() -> {
+                    val posts = db.postDao().getAll()
+                    _posts.postValue(SuccessState(this@PostsViewModel, posts))
+                }
+                else -> _posts.postValue(ErrorState(this@PostsViewModel))
             }
         }
     }
 
     private val coroutineExceptionHandler = CoroutineExceptionHandler { _, _ ->
-        _posts.postValue(ErrorState(this@PostsViewModel))
+        viewModelScope.launch(Dispatchers.Main) {
+            if (db.postDao().getAll().isNotEmpty()) {
+                val posts = db.postDao().getAll()
+                _posts.postValue(SuccessState(this@PostsViewModel, posts))
+            } else
+                _posts.postValue(ErrorState(this@PostsViewModel))
+        }
     }
 
     public override fun onCleared() {
