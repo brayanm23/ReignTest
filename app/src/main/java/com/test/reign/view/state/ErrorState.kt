@@ -15,18 +15,18 @@ class ErrorState(private val viewModel: PostsViewModel) : PostsViewState {
     override fun setState(view: View, postsFragment: PostsFragment) {
         with(view) {
             view_loading.fadeOut()
-            //home_content_layout.fadeOut()
-            view_error.removeAllViews()
-
-            view_error.addView(
-                from(context).inflate(content_error, null).apply {
-                    retry_button.setOnClickListener {
-                        viewModel.getPosts()
+            content_posts.fadeOut()
+            view_error.apply {
+                removeAllViews()
+                addView(
+                    from(context).inflate(content_error, null).apply {
+                        retry_button.setOnClickListener {
+                            viewModel.getPosts()
+                        }
                     }
-                }
-            )
-
-            view_error.fadeIn()
+                )
+                fadeIn()
+            }
         }
     }
 }

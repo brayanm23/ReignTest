@@ -13,8 +13,7 @@ data class Post (
     val author: String,
     val story_title: String,
     val story_url: String,
-    var isDelete: Boolean = false,
-    var isExpanded: Boolean = false
+    var isDelete: Boolean = false
 ) {
     companion object {
         const val TABLE_NAME = "post"

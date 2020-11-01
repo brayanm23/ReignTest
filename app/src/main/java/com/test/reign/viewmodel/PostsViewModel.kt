@@ -34,8 +34,8 @@ class PostsViewModel(private val postRepository: PostRepository, private val db:
             when {
                 response.status == SUCCESS -> {
                     model = response.data!!
-                    _posts.postValue(SuccessState(this@PostsViewModel, model.hits))
                     db.postDao().insertAll(model.hits)
+                    _posts.postValue(SuccessState(this@PostsViewModel, model.hits))
                 }
                 response.status == CONNECTION_ERROR && db.postDao().getAll().isNotEmpty() -> {
                     val posts = db.postDao().getAll()
