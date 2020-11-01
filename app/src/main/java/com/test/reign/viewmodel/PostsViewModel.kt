@@ -46,6 +46,12 @@ class PostsViewModel(private val postRepository: PostRepository, private val db:
         }
     }
 
+    fun deleteById(id: String) {
+        viewModelScope.launch(Dispatchers.Main) {
+            db.postDao().deleteById(id)
+        }
+    }
+
     private val coroutineExceptionHandler = CoroutineExceptionHandler { _, _ ->
         viewModelScope.launch(Dispatchers.Main) {
             if (db.postDao().getAll().isNotEmpty()) {

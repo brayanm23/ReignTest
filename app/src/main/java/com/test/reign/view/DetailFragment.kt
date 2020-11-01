@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.test.reign.R
-import com.test.reign.view.adapter.PostAdapter.Companion.TITLE_KEY
-import com.test.reign.view.adapter.PostAdapter.Companion.URL_KEY
+import com.test.reign.view.state.SuccessState.Companion.TITLE_KEY
+import com.test.reign.view.state.SuccessState.Companion.URL_KEY
 import kotlinx.android.synthetic.main.fragment_detail.*
 
 class DetailFragment : Fragment() {
