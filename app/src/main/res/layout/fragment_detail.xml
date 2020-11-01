@@ -2,7 +2,6 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/detail_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -23,14 +22,9 @@
                 style="?attr/textAppearanceHeadline4"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="16dp"
-                android:alpha="0"
                 android:ellipsize="end"
                 android:gravity="center_vertical"
-                android:maxLines="1"
-                android:text="@{title}"
-                tools:alpha="1"
-                tools:text="40% off en PedidosYa" />
+                android:maxLines="1" />
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -43,11 +37,10 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <WebView
-            android:id="@+id/deatil_web_view"
+            android:id="@+id/detail_web_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

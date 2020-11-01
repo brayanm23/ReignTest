@@ -18,11 +18,11 @@ class SuccessState(private val viewModel: PostsViewModel, private val response: 
             setOnRefreshListener(view.rootView)
             posts_recyclerview.apply {
                 layoutManager = SSMLLinearLayoutManager(context)
-                adapter = PostAdapter(response.hits)
+                adapter = PostAdapter()
+                (adapter as PostAdapter).setPosts(response.hits)
                 addItemDecoration(DividerItemDecoration(context, VERTICAL))
             }
         }
-
     }
 
     private fun setOnRefreshListener(view: View) {
