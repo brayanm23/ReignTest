@@ -5,4 +5,7 @@
     <string name="title_generic_error">Tuvimos un problema</string>
     <string name="text_generic_error">Algo nos salió mal y no podemos continuar.\n¿Nos das otra oportunidad?</string>
     <string name="text_button_generic_error">Volver a intentar</string>
+
+    <!--Swipe delete-->
+    <string name="text_button_delete">Eliminar</string>
 </resources>

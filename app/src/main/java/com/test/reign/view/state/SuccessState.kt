@@ -29,7 +29,7 @@ class SuccessState(private val viewModel: PostsViewModel, private val response: 
 
     override fun setState(view: View, postsFragment: PostsFragment) {
         with(view) {
-            view_loading.fadeOut()
+            progress_bar.fadeOut()
             view_error.fadeOut()
             content_posts.apply {
                 removeAllViews()

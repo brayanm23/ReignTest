@@ -14,7 +14,7 @@ class ErrorState(private val viewModel: PostsViewModel) : PostsViewState {
 
     override fun setState(view: View, postsFragment: PostsFragment) {
         with(view) {
-            view_loading.fadeOut()
+            progress_bar.fadeOut()
             content_posts.fadeOut()
             view_error.apply {
                 removeAllViews()

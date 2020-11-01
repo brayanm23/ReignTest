@@ -9,16 +9,21 @@
 
         <LinearLayout
             android:id="@+id/llDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:padding="10dp"
             android:layout_gravity="end"
-            android:background="@android:color/holo_red_dark"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:background="@drawable/background_delete">
 
-            <ImageView
+            <TextView
+                style="?attr/textAppearanceBody1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@android:drawable/ic_input_delete" />
+                android:layout_gravity="center_vertical"
+                android:paddingHorizontal="20dp"
+                android:textColor="@color/ui_color_white"
+                android:text="@string/text_button_delete"/>
+
         </LinearLayout>
 
         <LinearLayout
