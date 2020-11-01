@@ -1,6 +1,5 @@
 package com.test.reign.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.test.reign.core.Status.CONNECTION_ERROR
 import com.test.reign.core.Status.SUCCESS
 import com.test.reign.database.AppDatabase
+import com.test.reign.model.Post
 import com.test.reign.view.state.SuccessState
 import com.test.reign.repository.PostRepository
 import com.test.reign.model.PostResponse
@@ -35,7 +35,7 @@ class PostsViewModel(private val postRepository: PostRepository, private val db:
                 response.status == SUCCESS -> {
                     model = response.data!!
                     db.postDao().insertAll(model.hits)
-                    _posts.postValue(SuccessState(this@PostsViewModel, model.hits))
+                    _posts.postValue(SuccessState(this@PostsViewModel, db.postDao().getAll()))
                 }
                 response.status == CONNECTION_ERROR && db.postDao().getAll().isNotEmpty() -> {
                     val posts = db.postDao().getAll()
@@ -46,9 +46,10 @@ class PostsViewModel(private val postRepository: PostRepository, private val db:
         }
     }
 
-    fun deleteById(id: String) {
+    fun deleteById(post: Post) {
         viewModelScope.launch(Dispatchers.Main) {
-            db.postDao().deleteById(id)
+            post.isDelete = true
+            db.postDao().deleteById(post)
         }
     }
 

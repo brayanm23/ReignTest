@@ -27,7 +27,7 @@ class PostAdapter(
             authorAndDate.text = "${post.author} - ${post.created_at}"
             llDelete.setOnClickListener {
                 remove(post)
-                deletePostInterface.deletePost(post.objectID)
+                deletePostInterface.deletePost(post)
             }
         }
     }

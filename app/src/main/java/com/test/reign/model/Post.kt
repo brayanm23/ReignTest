@@ -18,5 +18,6 @@ data class Post (
     companion object {
         const val TABLE_NAME = "post"
         const val COLUMN_NAME_ID = "id"
+        const val COLUMN_NAME_IS_DELETE = "isDelete"
     }
 }

@@ -46,7 +46,7 @@ class SuccessState(private val viewModel: PostsViewModel, private val response: 
         recyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = PostAdapter(object : DeletePostInterface {
-                override fun deletePost(id: String) { viewModel.deleteById(id) }
+                override fun deletePost(post: Post) { viewModel.deleteById(post) }
             })
             (adapter as PostAdapter).setRecyclerViewItemClick { view, post ->
                 val bundle = Bundle().apply {
